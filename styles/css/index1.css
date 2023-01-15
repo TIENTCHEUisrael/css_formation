@@ -1,0 +1,30 @@
+body{
+    background-color: lightblue;
+    text-align: center;
+}
+
+.wrapper{
+    width: 100%;
+    padding: 20px;
+    box-sizing: border-box;/*indique au navigateur de tenir compte de toute bordure et remplissage dans les valeurs que vous spécifiez pour la largeur et la hauteur d'un élément. Si vous définissez la largeur d'un élément sur 100 pixels, ces 100 pixels incluront toute bordure ou remplissage que vous avez ajouté, et la zone de contenu se rétrécira pour absorber cette largeur supplémentaire.*/
+}
+
+img{
+    transform: scale(1,1)/*Ici c'est pour l'agrantissement du fond*/ translate(0px,0.5px) /*Ici c'est pour le decalage sur l'horizontale et la verticale*/;
+}
+.cercle{
+    width: 100px;
+    padding: 50px 0;
+    background-color: pink;
+    color: white;
+    cursor: pointer;
+    border-radius: 50px;
+    line-height: 0;/*Il est couramment utilisé pour définir la distance entre les lignes de texte*/
+    margin: 60px auto;
+    transition: background 1s/*Temps pour effectuer le background dans lehover*/, transform 0.3s/*Pour faire valoir la transformation dans hover et le temps utiliser pour l'effectuer*/; 
+}
+
+.cercle:hover{
+    background: salmon;
+    transform: rotate(360deg);/*Changement de la rotation a 360 degrer*/
+}

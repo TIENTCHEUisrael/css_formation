@@ -1,0 +1,101 @@
+html,body{
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+    margin: 0;
+}
+
+.grass, .sky, .road{
+    position: relative;/*La propriété CSS position définit la position d'un élément dans un document. Les propriétés top, right, bottom et left déterminent l'emplacement final des éléments positionnés.*/
+}
+
+.sky{
+    height: 40%;
+    background: skyblue;
+}
+
+.grass{
+    height: 30%;
+    background: seagreen;
+}
+
+.road{
+    height: 30%;
+    background: dimgrey;
+    box-sizing: border-box;
+    border-top: 10px solid grey;
+    border-bottom: 10px solid grey;
+    width: 100%;
+}
+
+.lines{
+    box-sizing: border-box;
+    border: 5px dashed #fff;
+    height: 0px;
+    width: 100%;
+    position: absolute;
+    top: 45%;
+}
+
+/*Animation de mario*/
+.mario{
+    position: absolute;
+    top: -40px;
+    left: Opx;
+    animation: drive 3s both infinite linear,
+                jump 0.3s 1.2s ease;
+    /* Meme chose
+    animation-name: drive;
+    animation-duration: 3s;
+    animation-fill-mode: both;/*La propriété CSS animation-fill-mode définit la manière dont une animation CSS applique les styles à sa cible avant et après son exécution.*/
+    /*animation-delay: 2s;
+    animation-iteration-count: infinite;*/
+}
+
+/*La règle @keyframes CSS contrôle les étapes intermédiaires d'une séquence d'animation CSS en définissant des styles pour les images clés (ou waypoints) le long de la séquence d'animation. Cela donne plus de contrôle sur les étapes intermédiaires de la séquence d'animation que sur les transitions.*/
+@keyframes drive {
+    from{transform:trans100pxlateX(-100px)}
+    to{ transform: translateX(1500px);}
+}
+
+/*Animatio de luigi*/
+.luigi{
+    position: absolute;
+    top: 50px;
+    left: 0px;
+    animation-name: drive;
+    animation-duration: 4s;
+    animation-fill-mode: both;/*La propriété CSS animation-fill-mode définit la manière dont une animation CSS applique les styles à sa cible avant et après son exécution.*/
+    animation-delay: 2s;
+    animation-iteration-count: infinite;
+    /*animation-direction: reverse;*/
+}
+
+
+.cloud{
+    position: absolute;
+    transform: scale(0.70,0.75);
+}
+/*La pseudo-classe CSS :nth-child() correspond aux éléments en fonction de leur position au sein d'un groupe de frères et sœurs.*/
+.cloud:nth-child(1){
+    width: 280px;
+    top: 100px;
+    opacity: 0.5;
+    animation: wind 80s linear infinite reverse;
+}
+.cloud:nth-child(2){
+    width: 380px;
+    top: 0;
+    animation: wind 50s linear infinite reverse;
+}
+
+@keyframes wind {
+    from{left: -400px;}
+    to{left: 100px;}
+}
+
+@keyframes jump {
+    0%{top: -40px;}
+    50%{top: -100px;}
+    100%{top: -40px;}
+}
